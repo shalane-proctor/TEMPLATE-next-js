@@ -1,23 +1,26 @@
-import { useState } from 'react';
+import Counter from '../components/counter';
+
+const data = [
+  {
+    name: 'Counter 1',
+  },
+  {
+    name: 'Counter 2',
+  },
+  {
+    name: 'Counter 3',
+  },
+  {
+    name: 'Counter 4',
+  },
+  {
+    name: 'Counter 5',
+  },
+];
 
 function Home() {
-  const [value, setValue] = useState(0);
-
   return (
-    <>
-      <h1>Counter Tile</h1>
-      <h2>{value}</h2>
-      <button type="button" onClick={() => setValue((prevState) => prevState + 1)}>
-        Increment
-      </button>
-      <button type="button" onClick={() => setValue((prevState) => prevState - 1)}>
-        Decrement
-      </button>
-      <button type="button" onClick={() => setValue(0)}>
-        Reset
-      </button>
-    </>
-  );
+    data.map(({ name }) => <><Counter counterTitle={name} /></>));
 }
 
 export default Home;
